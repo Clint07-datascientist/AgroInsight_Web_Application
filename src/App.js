@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/App.css';
 import Dashboard from './components/Dashboard';
 import SoilHealth from './components/SoilHealth';
 import Weather from './components/Weather';

@@ -7,7 +7,6 @@ import Weather from './components/Weather';
 import CropHealth from './components/CropHealth';
 import ResourceManagement from './components/ResourceManagement';
 import MarketInfo from './components/MarketInfo';
-import Login from './components/login';
 import AdminDashboard from './components/AdminDashboard';
 import Login from './components/Login';
 

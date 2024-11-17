@@ -1,11 +1,11 @@
 import React from 'react';
-import './Weather.css';
+import '../styles/Weather.css'; // Adjust the path to point to the styles directory
 
 function Weather() {
   return (
     <div className="weather">
-      <h1>Weather Forecasting</h1>
-      <p>Real-time weather updates and forecasts.</p>
+      <h2>Weather Forecast</h2>
+      {/* Add weather-specific components and functionality here */}
     </div>
   );
 }

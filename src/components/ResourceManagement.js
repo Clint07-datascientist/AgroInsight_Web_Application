@@ -1,11 +1,11 @@
 import React from 'react';
-import './ResourceManagement.css';
+import '../styles/ResourceManagement.css'; // Ensure this file exists and is correctly linked
 
 function ResourceManagement() {
   return (
     <div className="resource-management">
-      <h1>Resource Management</h1>
-      <p>Track and optimize the use of water and fertilizers.</p>
+      <h2>Resource Management</h2>
+      <p>Details about resource management.</p>
     </div>
   );
 }

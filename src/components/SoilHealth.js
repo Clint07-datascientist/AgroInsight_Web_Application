@@ -1,7 +1,7 @@
 // src/components/SoilHealth.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './SoilHealth.css';
+import '../styles/SoilHealth.css';
 
 function SoilHealth() {
   const [soilData, setSoilData] = useState([]);
@@ -29,7 +29,7 @@ function SoilHealth() {
 
   return (
     <div className="soil-health">
-      <h1>Soil Health Monitoring</h1>
+      <h2>Soil Health Monitoring</h2>
       <p>Data on soil moisture, pH levels, and nutrient content.</p>
       <button onClick={() => getRecommendation(20, 6.5)}>Get Recommendation</button>
       <p>Recommendation: {recommendation}</p>

@@ -1,0 +1,25 @@
+.admin-dashboard {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-dashboard h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-dashboard .admin-section {
+    margin-bottom: 20px;
+  }
+  
+  .admin-dashboard .admin-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .admin-dashboard .admin-section p {
+    font-size: 16px;
+  }

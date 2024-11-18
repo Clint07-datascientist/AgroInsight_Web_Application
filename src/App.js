@@ -10,6 +10,7 @@ import MarketInfo from './components/MarketInfo';
 import AdminDashboard from './components/AdminDashboard';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import LandingPage from './components/LandingPage';
 
 function App() {
   const userRole = localStorage.getItem('userRole');
@@ -23,15 +24,26 @@ function App() {
           <Route path="/dashboard">
             {userRole === 'farmer' ? <Dashboard /> : <Redirect to="/login" />}
           </Route>
-          <Route path="/soil-health" component={SoilHealth} />
-          <Route path="/weather" component={Weather} />
-          <Route path="/crop-health" component={CropHealth} />
-          <Route path="/resource-management" component={ResourceManagement} />
-          <Route path="/market-info" component={MarketInfo} />
+          <Route path="/soil-health">
+            {userRole === 'farmer' ? <SoilHealth /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/weather">
+            {userRole === 'farmer' ? <Weather /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/crop-health">
+            {userRole === 'farmer' ? <CropHealth /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/resource-management">
+            {userRole === 'farmer' ? <ResourceManagement /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/market-info">
+            {userRole === 'farmer' ? <MarketInfo /> : <Redirect to="/login" />}
+          </Route>
           <Route path="/admin">
             {userRole === 'admin' ? <AdminDashboard /> : <Redirect to="/login" />}
           </Route>
-          <Redirect from="/" to="/login" />
+          <Route path="/" exact component={LandingPage} />
+          <Redirect from="*" to="/" />
         </Switch>
       </div>
     </Router>

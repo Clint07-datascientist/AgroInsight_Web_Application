@@ -1,0 +1,1 @@
+This folder is for the purpose of giving context in trying to debug issues in my code.

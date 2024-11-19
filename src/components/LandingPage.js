@@ -12,7 +12,9 @@ function LandingPage() {
   return (
     <div className="landing-page">
       <header className="header">
-        <div className="logo">Farm Management App</div>
+        <div className="logo">
+          <img src="../../images/AgroInsight_Logo.jpeg" alt="AgroInsight" />
+        </div>
         <nav className="nav">
           <a href="#features">Features</a>
           <a href="#about">About</a>
@@ -24,7 +26,7 @@ function LandingPage() {
         <h1>Empower Your Farm with Data-Driven Insights</h1>
         <p>Optimize your farming operations with real-time data, predictive analytics, and smart recommendations.</p>
         <button onClick={handleGetStarted}>Get Started Now</button>
-        <img src="/hero-image.jpg" alt="Farmer using a tablet in the field" />
+        <img src="/images/AgroInsight_Infographics.jpg" alt="Farmer using a tablet in the field" />
       </section>
       <section id="features" className="features">
         <h2>Features</h2>

@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        {userRole && <Navbar />} {/* Conditionally render Navbar based on user role */}
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/dashboard">

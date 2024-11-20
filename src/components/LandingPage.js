@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import '../styles/LandingPage.css';
+import logo from '../assets/images/AgroInsight_Logo.jpeg';
+import heroImage from '../assets/images/AgroInsight_Infographics.jpg';
 
 function LandingPage() {
   const history = useHistory();
@@ -13,7 +15,7 @@ function LandingPage() {
     <div className="landing-page">
       <header className="header">
         <div className="logo">
-          <img src="../../images/AgroInsight_Logo.jpeg" alt="AgroInsight" />
+          <img src={logo} alt="AgroInsight" />
         </div>
         <nav className="nav">
           <a href="#features">Features</a>
@@ -26,7 +28,7 @@ function LandingPage() {
         <h1>Empower Your Farm with Data-Driven Insights</h1>
         <p>Optimize your farming operations with real-time data, predictive analytics, and smart recommendations.</p>
         <button onClick={handleGetStarted}>Get Started Now</button>
-        <img src="/images/AgroInsight_Infographics.jpg" alt="Farmer using a tablet in the field" />
+        <img src={heroImage} alt="Farmer using a tablet in the field" />
       </section>
       <section id="features" className="features">
         <h2>Features</h2>

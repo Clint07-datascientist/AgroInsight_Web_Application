@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const soilController = require('../controllers/SoilController');
+const SoilController = require('../controllers/SoilController'); // Ensure this path is correct
 
-router.get('/', soilController.getSoilData);
-router.post('/', soilController.addSoilData);
+// Define your routes here
+router.get('/', SoilController.getAllSoilData);
+router.post('/', SoilController.createSoilData);
 
 module.exports = router;

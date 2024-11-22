@@ -7,9 +7,20 @@ import Weather from './components/Weather';
 import CropHealth from './components/CropHealth';
 import ResourceManagement from './components/ResourceManagement';
 import MarketInfo from './components/MarketInfo';
+import Notifications from './components/Notifications'; // Ensure this import is correct
+import Reports from './components/Reports';
+import UserManagement from './components/UserManagement';
+import SystemMonitoring from './components/SystemMonitoring';
+import DataAnalytics from './components/DataAnalytics';
+import AlertsNotifications from './components/AlertsNotifications';
+import ResourceAllocation from './components/ResourceAllocation';
+import MarketAnalysis from './components/MarketAnalysis';
+import Settings from './components/Settings';
+import Support from './components/Support';
 import AdminDashboard from './components/AdminDashboard';
 import Login from './components/Login';
-import Navbar from './components/Navbar';
+import FarmerNavbar from './components/FarmerNavbar';
+import AdminNavbar from './components/AdminNavbar';
 import LandingPage from './components/LandingPage';
 
 function App() {
@@ -18,7 +29,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {userRole && <Navbar />} {/* Conditionally render Navbar based on user role */}
+        {userRole === 'farmer' && <FarmerNavbar />}
+        {userRole === 'admin' && <AdminNavbar />}
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/dashboard">
@@ -38,6 +50,36 @@ function App() {
           </Route>
           <Route path="/market-info">
             {userRole === 'farmer' ? <MarketInfo /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/notifications">
+            {userRole === 'farmer' ? <Notifications /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/reports">
+            {userRole === 'farmer' ? <Reports /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/user-management">
+            {userRole === 'admin' ? <UserManagement /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/system-monitoring">
+            {userRole === 'admin' ? <SystemMonitoring /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/data-analytics">
+            {userRole === 'admin' ? <DataAnalytics /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/alerts-notifications">
+            {userRole === 'admin' ? <AlertsNotifications /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/resource-allocation">
+            {userRole === 'admin' ? <ResourceAllocation /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/market-analysis">
+            {userRole === 'admin' ? <MarketAnalysis /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/settings">
+            {userRole === 'admin' ? <Settings /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/support">
+            {userRole === 'admin' ? <Support /> : <Redirect to="/login" />}
           </Route>
           <Route path="/admin">
             {userRole === 'admin' ? <AdminDashboard /> : <Redirect to="/login" />}

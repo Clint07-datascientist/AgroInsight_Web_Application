@@ -7,7 +7,7 @@ import Weather from './components/Weather';
 import CropHealth from './components/CropHealth';
 import ResourceManagement from './components/ResourceManagement';
 import MarketInfo from './components/MarketInfo';
-import Notifications from './components/Notifications'; // Ensure this import is correct
+import Notifications from './components/Notifications';
 import Reports from './components/Reports';
 import UserManagement from './components/UserManagement';
 import SystemMonitoring from './components/SystemMonitoring';

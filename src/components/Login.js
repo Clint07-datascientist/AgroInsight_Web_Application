@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/Login.css';
 
 function Login() {
@@ -7,15 +8,19 @@ function Login() {
   const [password, setPassword] = useState('');
   const history = useHistory();
 
-  const handleLogin = () => {
-    // Dummy authentication logic
-    if (username === 'farmer' && password === 'password') {
-      localStorage.setItem('userRole', 'farmer');
-      history.push('/dashboard');
-    } else if (username === 'admin' && password === 'password') {
-      localStorage.setItem('userRole', 'admin');
-      history.push('/admin');
-    } else {
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/login', { username, password });
+      const { token } = response.data;
+      const decodedToken = JSON.parse(atob(token.split('.')[1]));
+      localStorage.setItem('userRole', decodedToken.role);
+      localStorage.setItem('token', token);
+      if (decodedToken.role === 'farmer') {
+        history.push('/dashboard');
+      } else if (decodedToken.role === 'admin') {
+        history.push('/admin');
+      }
+    } catch (error) {
       alert('Invalid credentials');
     }
   };

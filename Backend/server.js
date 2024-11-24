@@ -28,7 +28,7 @@ const SECRET_KEY = 'your_secret_key';
 
 const users = [
   { username: 'farmer', password: bcrypt.hashSync('farmerpassword', 10), role: 'farmer' },
-  { username: 'admin', password: bcrypt.hashSync('adminpassword', 10), role: 'admin' }
+  { username: 'ADMN001', password: bcrypt.hashSync('adminpassword', 10), role: 'admin' }
 ];
 
 app.post('/login', (req, res) => {

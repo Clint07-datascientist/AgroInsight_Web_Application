@@ -10,15 +10,20 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/login', { username, password });
-      const { token } = response.data;
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      localStorage.setItem('userRole', decodedToken.role);
-      localStorage.setItem('token', token);
-      if (decodedToken.role === 'farmer') {
-        history.push('/dashboard');
-      } else if (decodedToken.role === 'admin') {
-        history.push('/admin');
+      // Validate Admin username and password rules
+      if (username.startsWith('ADMN') && username.length === 7 && password.length >= 8) {
+        const response = await axios.post('http://localhost:5000/login', { username, password });
+        const { token } = response.data;
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        localStorage.setItem('userRole', decodedToken.role);
+        localStorage.setItem('token', token);
+        if (decodedToken.role === 'farmer') {
+          history.push('/dashboard');
+        } else if (decodedToken.role === 'admin') {
+          history.push('/admin');
+        }
+      } else {
+        alert('Invalid Admin username or password format');
       }
     } catch (error) {
       alert('Invalid credentials');

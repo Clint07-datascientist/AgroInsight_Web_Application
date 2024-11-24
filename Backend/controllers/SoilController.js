@@ -1,4 +1,4 @@
-const Soil = require('../models/Soil'); // Ensure this path is correct
+const Soil = require('../models/SoilModel'); // Ensure this path is correct
 
 exports.getAllSoilData = async (req, res) => {
   try {

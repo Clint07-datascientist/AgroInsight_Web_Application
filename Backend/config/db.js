@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/agroinsight', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect('mongodb+srv://tanakaclinton870:yR9ns98XET9tlS82@cluster0.e3sny.mongodb.net/agroinsight?retryWrites=true&w=majority');
     console.log('MongoDB connected');
   } catch (err) {
     console.error(err.message);

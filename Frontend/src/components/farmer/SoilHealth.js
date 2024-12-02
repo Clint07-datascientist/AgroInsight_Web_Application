@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import FarmerNavbar from './FarmerNavbar';
 import { generateMockData } from '../../utils/mockData';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, PieChart, Pie, Cell

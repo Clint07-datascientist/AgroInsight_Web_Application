@@ -28,7 +28,7 @@ const Login = () => {
     <div className="login-page">
       <div className="login-container">
         <form onSubmit={handleLogin} className="login-form">
-          <h2>Login to Farm Management System</h2>
+          <h2>Login to AgroInsight</h2>
           {error && <div className="error-message">{error}</div>}
           <div className="form-group">
             <label>Username:</label>
